@@ -1,6 +1,7 @@
-import Posts from "../../lib/Post";
+import Post from "../../lib/Post";
 
 export default interface IPostService {
-    Index(): Promise<Posts | void>
-    Show(id: number): Promise<Posts | void>
+    posts: any
+    Index(): Promise<Post | void>
+    Show(id: number): Promise<Post | void>
 }
