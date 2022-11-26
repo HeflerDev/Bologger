@@ -1,19 +1,28 @@
 import IUserService from "./IUserService";
 import User from "../../lib/User";
-import * as dotenv from "dotenv";
 import axios from "axios";
 
-dotenv.config()
-// TODO: Remove console
-console.log(process.env)
-
 export default class UserService implements IUserService {
-    public Index(): Promise<void | User> {
-        return Promise.resolve(undefined);
+    private url: string | undefined = process.env.API_URL
+    public users!: User[]
+    public user!: User
+
+    public async Index(): Promise<void | User> {
+        try {
+            await axios.get(this.url + "/users")
+                .then((res) => this.users = res.data)
+        } catch(err) {
+            throw err;
+        }
     }
 
-    public Show(id: number): Promise<void | User> {
-        return Promise.resolve(undefined);
+    public async Show(id: number): Promise<void> {
+        try {
+            await axios.get(this.url + `/users/${id}`)
+                .then((res) => this.user = res.data)
+        } catch (err) {
+            throw err
+        }
     }
 
 }
