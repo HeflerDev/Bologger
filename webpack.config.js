@@ -3,6 +3,8 @@ const prod = process.env.NODE_ENV === 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
+const webpack = require("webpack");
+require('dotenv').config({ path: './.env' });
 
 module.exports = {
     mode: prod ? 'production' : 'development',
@@ -28,13 +30,9 @@ module.exports = {
                 exclude: /node_modules/,
                 use:
                     [
+                        'style-loader',
                         'css-loader',
-                        {
-                            loader: 'sass-loader',
-                            options: {
-                                implementation: require("sass")
-                            }
-                        }
+                        'sass-loader'
                     ],
             },
         ]
@@ -45,5 +43,8 @@ module.exports = {
             template: 'src/index.html',
         }),
         new MiniCssExtractPlugin(),
+        new webpack.DefinePlugin({
+            "process.env": JSON.stringify(process.env)
+        })
     ],
 };
