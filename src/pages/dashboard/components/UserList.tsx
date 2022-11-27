@@ -1,30 +1,48 @@
-import React from "react";
-import {Col, Row, Stack} from "react-bootstrap";
+import React, {useState} from "react";
+import {Stack} from "react-bootstrap";
 import User from "../../../lib/User";
+import {DownArrow} from "../../../components/Icons";
 
-export const UserList = ({users}:{users: User[]}) => (
-    <Stack>
-        <Row>
+export const UserList = ({user}: { user: User }) => {
+    const [drop, setDrop] = useState<boolean>(false)
+    return (
+        <Stack className={"list-container"}>
+            <div className="data-block">
+                <div className="label">Name:</div>
+                <div className="value">{user.name}</div>
+            </div>
+            <div className="data-block">
+                <div className="label">Username:</div>
+                <div className="value">{user.username}</div>
+            </div>
+            <div className="data-block">
+                <div className="label">Email</div>
+                <div className="value">{user.email}</div>
+            </div>
             {
-                users && users.map((user: User, index: number) => (
-                       <Col xs={12} key={user.username + index}>
-                          <Stack className={"list-container"}>
-                              <div className="block">
-                                  <div className="label">Name:</div>
-                                  <div className="value">{user.name}</div>
-                              </div>
-                              <div className="block">
-                                  <div className="label">UserName:</div>
-                                  <div className="value">{user.username}</div>
-                              </div>
-                              <div className="block">
-                                  <div className="label">Email</div>
-                                  <div className="value">{user.email}</div>
-                              </div>
-                          </Stack>
-                       </Col>
-                ))
+                drop && (
+                    <Stack>
+                        <div className="data-block">
+                            <div className="label">Phone:</div>
+                            <div className="value">{user.phone}</div>
+                        </div>
+                        <div className="data-block">
+                            <div className="label">Website:</div>
+                            <div className="value">{user.website}</div>
+                        </div>
+                        <div className="data-block">
+                            <div className="label">Company Name:</div>
+                            <div className="value">{user.company.name}</div>
+                        </div>
+                        <div className="data-block">
+                            <div className="value">"{user.company.catchPhrase}"</div>
+                        </div>
+                    </Stack>
+                )
             }
-        </Row>
-    </Stack>
-)
+            <div className="dropdown" onClick={() => setDrop(!drop)}>
+                <DownArrow color={"#999"} size={"35"} rotate={drop ? 2 : 0}/>
+            </div>
+        </Stack>
+    )
+}

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
 const webpack = require("webpack");
-require('dotenv').config({ path: './.env' });
+require('dotenv').config({path: './.env'});
 
 module.exports = {
     mode: prod ? 'production' : 'development',
@@ -35,6 +35,11 @@ module.exports = {
                         'sass-loader'
                     ],
             },
+            {
+                test: /\.(png|jpe?g)$/i,
+                exclude: /node_modules/,
+                use: "file-loader"
+            }
         ]
     },
     devtool: prod ? undefined : 'source-map',

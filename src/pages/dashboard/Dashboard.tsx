@@ -5,7 +5,7 @@ import User from "../../lib/User";
 import PostService from "../../services/PostService";
 import IUserService from "../../services/UserService/IUserService";
 import UserService from "../../services/UserService";
-import {UserList} from "./components";
+import {Posts, UserList} from "./components";
 import Post from "../../lib/Post";
 
 const Dashboard = (): JSX.Element => {
@@ -24,13 +24,24 @@ const Dashboard = (): JSX.Element => {
         })();
     }, [])
 
-    return(
+    return (
         <Stack>
-           <Row>
-               <Col xs={12}>
-                   <UserList users={users}/>
-               </Col>
-           </Row>
+            <Row>
+                <Col xs={12} lg={8}>
+                    {
+                        posts && posts.map((post, index) => (
+                            <Posts post={post} index={index} key={post.title + index}/>
+                        ))
+                    }
+                </Col>
+                <Col xs={12} md={6} lg={4}>
+                    {
+                        users && users.map((user) => (
+                            <UserList user={user}/>
+                        ))
+                    }
+                </Col>
+            </Row>
         </Stack>
     )
 }

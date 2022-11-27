@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/HeflerDev/Bologger#readme",
   "devDependencies": {
+    "@iconify/react": "^4.0.0",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "css-loader": "^6.7.2",
     "dotenv-webpack": "^8.0.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.0",
     "sass": "^1.56.1",
