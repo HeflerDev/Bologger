@@ -40,6 +40,9 @@ const Dashboard = (): JSX.Element => {
     return (
         <Stack>
             <Row>
+                <Col xs={12} className={"website-title"}>
+                    The Post
+                </Col>
                 <Col xs={12} lg={8}>
                     {
                         posts && currentItems.map((post, index) => (
@@ -66,7 +69,7 @@ const Dashboard = (): JSX.Element => {
                 <Col xs={12} md={6} lg={4}>
                     {
                         users && users.map((user) => (
-                            <UserList user={user}/>
+                            <UserList user={user} key={user.id + user.name}/>
                         ))
                     }
                 </Col>
