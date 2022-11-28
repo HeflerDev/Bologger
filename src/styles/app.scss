@@ -1,0 +1,10 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "src/styles/pages/Dashboard";
+@import "src/styles/pages/User";
+@import "src/styles/patterns/buttons";
+@import "src/styles/patterns/paginate";
+
+.row {
+  padding: 0 !important;
+  margin: 0 !important;
+}

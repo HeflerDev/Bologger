@@ -1,0 +1,56 @@
+@use "../variables/colors";
+@use "../variables/margins";
+
+.icon-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.image-block {
+  margin: margins.$xxg auto;
+  width: fit-content;
+  overflow: hidden;
+  border-radius: 50%;
+
+  > .image {
+    margin: auto;
+  }
+}
+
+.address-block {
+
+  > .title {
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+  }
+
+  > .info {
+    display: flex;
+    justify-content: center;
+
+    > div {
+      margin: margins.$lg margins.$xxg;
+    }
+  }
+}
+
+.name-block {
+  > .name {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.map-container {
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  height: fit-content;
+  margin: margins.$lg 0;
+}

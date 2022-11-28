@@ -1,0 +1,26 @@
+@use "../variables/colors";
+@use "../variables/margins";
+
+.button {
+  background-color: colors.$pale-silver;
+  color: #555;
+  padding: margins.$sm;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &__accent {
+    @extend .button;
+    background-color: colors.$dark-purple;
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+      background-color: colors.$amaranth-m-p;
+    }
+  }
+}
