@@ -1,4 +1,4 @@
-# Nome do projeto
+# Bologger
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
@@ -7,9 +7,11 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/heflerdev/bologger?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/heflerdev/bologger?style=for-the-badge)
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="Screenshot_20221128_061609.png" alt="exemplo imagem">
 
 > A blog mockup made in React
+
+## [LIVE VERSION](https://master--inquisitive-salmiakki-a0ab81.netlify.app/)
 
 ### Ajustes e melhorias
 
@@ -27,6 +29,7 @@ Project WIP, next tasks are:
 - NODE
 
 ## 🚀 Building
+**Attention**: To build the website properly you need a .env file given by me. Much probably the env variables were sent by email.
 
 To build bologger:
 
